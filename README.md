@@ -12,3 +12,4 @@ Một số tính năng:
 - UICollectionView
 - ...
 
+![](DemoReminder.gif)
