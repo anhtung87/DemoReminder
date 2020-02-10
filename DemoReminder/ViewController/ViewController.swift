@@ -15,6 +15,13 @@ protocol MainViewControllerLogic: class {
 class ViewController: UIViewController, HasCustomView, MainViewControllerLogic {
   typealias CustomView = MainView
   
+  let navigationTitle: UILabel = {
+    let label = UILabel()
+    label.text = "Danh sách"
+    label.textColor = .systemGray6
+    return label
+  }()
+  
   let fakeNotes = [
     TypeNote(imageName: "calendar", title: "Hôm nay", count: 0),
     TypeNote(imageName: "timer", title: "Lịch dự kiến", count: 0),
@@ -43,7 +50,8 @@ class ViewController: UIViewController, HasCustomView, MainViewControllerLogic {
       navigationController?.navigationBar.shadowImage = UIImage()
   //    navigationController?.navigationBar.isTranslucent = true
       navigationController?.view.backgroundColor = .systemGray6
-      navigationController?.navigationBar.topItem?.title = ""
+//      navigationController?.navigationBar.topItem?.title = ""
+      navigationController?.navigationBar.topItem?.titleView = navigationTitle
     }
   
   func showDefaultReminderTypes() {
